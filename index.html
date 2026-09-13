@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tiago da silva carvalho desenvolvedor Full Stack">
+    <link rel="shortcut icon" href="/Meu-portifolio/computador-portatil.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Portifólio Tiago Silva - DBA Junior</title>
+</head>
+
+<body>
+
+    <header class="perfil">
+        <div>
+            <!--SEÇÃO FOTO DE PERFIL-->
+            <img class="foto--perfil" src="/perfil.png" allow="fullscreen" alt="Homem sorrindo"
+                title="Tiago Silva">
+        </div>
+
+        <h1>Desenvolvedor SQL Junior..</h1>
+    </header>
+
+
+
+
+
+    <!--USANDO A SEMANTICA DO HTML PARA MENU DE NAVEGAÇÃO-->
+    <header class="lista">
+        <nav>
+            <ul>
+                <li><a href="#Sobre-min">Sobre min</a></li>
+                <li><a href="#projetos-sql">Projetos</a></li>
+                <li><a href="#habilidades">habilidades</a></li>
+                <li><a href="#Contatos">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!--A TEG MAIN ENGLOBA TODO O CONTEUSO PRINCIPAL DE UMA PAGINA-->
+    <main>
+
+        <!--SEÇÃO SOBRE MIN DENTRO DA SEMANTICA SECTION-->
+        <section id="sobre-min">
+            <h1>Analista De bi Junior</h1>
+            <h3>**Tiago da Silva Carvalho**
+                ## Projetos de Banco de Dados & SQL
+
+                ### Transformando dados em informações para apoiar decisões.
+
+                Neste projeto, aplico conhecimentos de **SQL Server** para estruturar, consultar e analisar dados de
+                forma organizada e eficiente.
+
+                O objetivo é demonstrar, na prática, minha capacidade de trabalhar com bancos de dados, desde a
+                exploração e tratamento das informações até a criação de consultas capazes de gerar **insights
+                relevantes para o negócio**.
+
+                Durante o desenvolvimento, utilizo conceitos como **SELECT, filtros, JOINs, GROUP BY, funções de
+                agregação, subconsultas, CTEs e funções de janela**, aplicando cada recurso de acordo com o problema
+                analisado.
+
+                Mais do que escrever consultas, busco entender **o que os dados estão mostrando e como essas informações
+                podem contribuir para uma tomada de decisão mais assertiva**.
+
+                **Tecnologias:** SQL Server | SQL | Modelagem de Dados | Análise de Dados
+
+                **Objetivo:** demonstrar raciocínio analítico, domínio dos fundamentos de SQL e capacidade de
+                transformar dados brutos em informações úteis para o negócio.
+
+            </h3>
+
+        </section>
+
+        <!-- =========================
+     PROJETOS SQL
+========================= -->
+
+        <section id="projetos-sql" class="sql-section">
+
+            <div class="sql-header">
+
+                <span class="sql-tag">SQL & DATABASE</span>
+
+                <h2>Projetos de Banco de Dados</h2>
+
+                <p>
+                    Projetos desenvolvidos em SQL para análise de dados,
+                    exploração de informações e resolução de problemas de negócio.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+         PROJETO 01
+    ========================= -->
+
+            <div class="sql-project">
+
+                <div class="sql-project-top">
+
+                    <div>
+                        <span class="sql-category">🛒 Projeto 01 — E-commerce</span>
+
+                        <h3>Análise de Vendas E-commerce</h3>
+
+                        <p>
+
+
+                            Objetivo:
+                            Analisar os dados de vendas de um e-commerce utilizando SQL Server, identificando
+                            faturamento, desempenho de produtos, categorias, vendedores e comportamento dos clientes.
+
+                            Principais análises:
+
+                            Faturamento total
+                            Faturamento por categoria
+                            Produtos mais vendidos
+                            Ranking de vendedores
+                            Ticket médio
+                            Vendas por período
+                            Melhores clientes
+                            Categorias acima da média
+                            Ranking com RANK()
+                            Classificação de produtos com CASE
+
+                            Tecnologias:
+                            SQL Server • T-SQL • JOIN • GROUP BY • HAVING • CTE • Window Functions
+
+                            Resultado:
+                            As consultas transformam os dados brutos do e-commerce em informações úteis para apoiar
+                            decisões comerciais, como identificar produtos de maior desempenho, categorias mais
+                            rentáveis e vendedores com melhores resultados.
+                        </p>
+                    </div>
+
+                    <div class="sql-project-number">
+                        01
+                    </div>
+
+                </div>
+
+
+                <!-- CARROSSEL -->
+
+                <div class="sql-carousel">
+
+                    <!-- SETA ESQUERDA -->
+
+                    <button class="sql-arrow sql-prev" type="button">
+                        &#10094;
+                    </button>
+
+
+                    <!-- ÁREA DO SLIDE -->
+
+                    <div class="sql-slide-container">
+
+
+                        <!-- =========================
+                     SLIDE 01
+                ========================= -->
+
+                        <div class="sql-slide active">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 01 / 10
+                            </span>
+
+                            <h4>Faturamento Total</h4>
+
+                            <p class="sql-question">
+                                Qual o faturamento total?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+SELECT
+    SUM(ip.Quantidade * ip.Preco_Unitario) AS Faturamento_Total
+FROM ItensPedido ip
+
+INNER JOIN Pedidos p
+    ON ip.ID_Pedido = p.ID_Pedido
+
+WHERE p.Status_Pedido = 'Concluído';
+
+
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <!-- TROQUE ESTA IMAGEM PELO SEU PRINT -->
+
+                                <img c" src="/fotos-projeto/faturamento.png"
+                                    alt="Resultado da consulta de faturamento total">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta permite identificar o faturamento
+                                    total considerando apenas os pedidos concluídos.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================
+                     SLIDE 02
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 02 / 10
+                            </span>
+
+                            <h4>Faturamento por Categoria</h4>
+
+                            <p class="sql-question">
+                                Quais categorias apresentam maior faturamento?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+--ANÁLISE 02 FATURAMENTO POR CATEGORIA
+SELECT
+    c.Nome_Categoria AS Categoria,
+
+    SUM(
+        ip.Quantidade * ip.Preco_Unitario
+    ) AS Faturamento
+
+FROM ItensPedido ip
+
+INNER JOIN Pedidos p
+    ON ip.ID_Pedido = p.ID_Pedido
+
+INNER JOIN Produtos pr
+    ON ip.ID_Produto = pr.ID_Produto
+
+INNER JOIN Categorias c
+    ON pr.ID_Categoria = c.ID_Categoria
+
+WHERE p.Status_Pedido = 'Concluído'
+
+GROUP BY c.Nome_Categoria
+
+ORDER BY Faturamento DESC;
+
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/faturamento-categoria.png"
+                                    alt="Resultado da consulta de faturamento por categoria">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A análise permite identificar quais categorias
+                                    são responsáveis pela maior parcela do faturamento.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================
+                     SLIDE 03
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 03 / 10
+                            </span>
+
+                            <h4>Produtos Mais Vendidos</h4>
+
+                            <p class="sql-question">
+                                Quais produto mais vendidos?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+SELECT
+    pr.Nome_Produto AS Produto,
+
+    SUM(ip.Quantidade) AS Quantidade_Vendida
+
+FROM ItensPedido ip
+
+INNER JOIN Pedidos p
+    ON ip.ID_Pedido = p.ID_Pedido
+
+INNER JOIN Produtos pr
+    ON ip.ID_Produto = pr.ID_Produto
+
+WHERE p.Status_Pedido = 'Concluído'
+
+GROUP BY pr.Nome_Produto
+
+ORDER BY Quantidade_Vendida DESC;
+
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/produto-mais-vendido.png"
+                                    alt="Resultado da consulta produtos qtd mais vendidas">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica os produtos com maior
+                                    quantidade de unidades vendidas.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================
+                     SLIDE 04
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 04 / 10
+                            </span>
+
+                            <h4>RANKING DE VENDEDOR</h4>
+
+                            <p class="sql-question">
+                                Quais vendedores tem mais vendas?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+SELECT
+    v.Nome_Vendedor AS Vendedor,
+
+    COUNT(DISTINCT p.ID_Pedido) AS Quantidade_Pedidos,
+
+    SUM(
+        ip.Quantidade * ip.Preco_Unitario
+    ) AS Faturamento
+
+FROM Vendedores v
+
+INNER JOIN Pedidos p
+    ON v.ID_Vendedor = p.ID_Vendedor
+
+INNER JOIN ItensPedido ip
+    ON p.ID_Pedido = ip.ID_Pedido
+
+WHERE p.Status_Pedido = 'Concluído'
+
+GROUP BY v.Nome_Vendedor
+
+ORDER BY Faturamento DESC;
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/ranging-vendedor.png"
+                                    alt="Resultado da consulta ranging-vendedores">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica o Ranking dos vendedores.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================
+                     SLIDE 05
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 05 / 10
+                            </span>
+
+                            <h4>TICKET-MÉDIO </h4>
+
+                            <p class="sql-question">
+                                Quais produtos possuem maior volume de vendas?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+--ANÁLISE 05 TICKET-MÉDIO 
+
+SELECT
+    AVG(Total_Pedido) AS Ticket_Medio
+
+FROM (
+
+    SELECT
+        p.ID_Pedido,
+
+        SUM(
+            ip.Quantidade * ip.Preco_Unitario
+        ) AS Total_Pedido
+
+    FROM Pedidos p
+
+    INNER JOIN ItensPedido ip
+        ON p.ID_Pedido = ip.ID_Pedido
+
+    WHERE p.Status_Pedido = 'Concluído'
+
+    GROUP BY p.ID_Pedido
+
+) AS PedidosTotais;
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/ticket-medio.png"
+                                    alt="Resultado da consulta ticket-medio dos produtos">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica o ticket-medio dos produtos.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================
+                     SLIDE 06
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 06 / 10
+                            </span>
+
+                            <h4>VENDAS POR ANO,MÊS,DIA</h4>
+
+                            <p class="sql-question">
+                                Quais produtos mais venderam por ano dia e mês?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+--ANÁLISE 06 — VENDAS POR ANO,MÊS,DIA
+SELECT
+    YEAR(p.Data_Pedido) AS Ano,
+    MONTH(p.Data_Pedido) AS Mes,
+    DAY(p.Data_Pedido) AS Dia,
+
+    SUM(ip.Quantidade * ip.Preco_Unitario) AS Faturamento
+
+FROM Pedidos p
+
+INNER JOIN ItensPedido ip
+    ON p.ID_Pedido = ip.ID_Pedido
+
+WHERE p.Status_Pedido = 'Concluído'
+
+GROUP BY
+    YEAR(p.Data_Pedido),
+    MONTH(p.Data_Pedido),
+    DAY(p.Data_Pedido)
+
+ORDER BY
+    Ano,
+    Mes,
+    Dia;
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/Vendas-mes-ano-dia.png"
+                                    alt="Resultado da consulta vendas por ano dia e mes">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica vendas por ano dia e mes.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =========================
+                     SLIDE 07
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 07 / 10
+                            </span>
+
+                            <h4>MELHORES CLIENTES</h4>
+
+                            <p class="sql-question">
+                                Quais os melhores clientes?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+SELECT
+    c.Nome_Cliente AS Cliente,
+
+    COUNT(DISTINCT p.ID_Pedido) AS Quantidade_Pedidos,
+
+    SUM(
+        ip.Quantidade * ip.Preco_Unitario
+    ) AS Valor_Total
+
+FROM Clientes c
+
+INNER JOIN Pedidos p
+    ON c.ID_Cliente = p.ID_Cliente
+
+INNER JOIN ItensPedido ip
+    ON p.ID_Pedido = ip.ID_Pedido
+
+WHERE p.Status_Pedido = 'Concluído'
+
+GROUP BY c.Nome_Cliente
+
+ORDER BY Valor_Total DESC;
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/melhor-cliente.png"
+                                    alt="Resultado da consulta melhores-cliente">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica os melhores clientes.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =========================
+                     SLIDE 08
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 08 / 10
+                            </span>
+
+                            <h4>CATEGORIA ACIMA DA MÉDIA</h4>
+
+                            <p class="sql-question">
+                                Quais produtos tem categoria acima da madia?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+WITH FaturamentoCategoria AS (
+
+    SELECT
+        c.Nome_Categoria AS Categoria,
+
+        SUM(
+            ip.Quantidade * ip.Preco_Unitario
+        ) AS Faturamento
+
+    FROM Categorias c
+
+    INNER JOIN Produtos pr
+        ON c.ID_Categoria = pr.ID_Categoria
+
+    INNER JOIN ItensPedido ip
+        ON pr.ID_Produto = ip.ID_Produto
+
+    INNER JOIN Pedidos p
+        ON ip.ID_Pedido = p.ID_Pedido
+
+    WHERE p.Status_Pedido = 'Concluído'
+
+    GROUP BY c.Nome_Categoria
+)
+SELECT
+    Categoria,
+    Faturamento
+
+FROM FaturamentoCategoria
+
+WHERE Faturamento >
+(
+    SELECT AVG(Faturamento)
+    FROM FaturamentoCategoria
+)
+ORDER BY Faturamento DESC;
+
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/cat-acima-da-media.png"
+                                    alt="Resultado da consulta cat-acima-da-media">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica Categoria de produtos acima da media.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =========================
+                     SLIDE 09
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 09 / 10
+                            </span>
+
+                            <h4> RANKING DE VENDEDOR E FATURAMENTO COM RANK()</h4>
+
+                            <p class="sql-question">
+                                Quais vendedores do raking tem maiores faturamento?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+
+WITH VendasVendedor AS (
+
+    SELECT
+        v.Nome_Vendedor AS Vendedor,
+
+        SUM(
+            ip.Quantidade * ip.Preco_Unitario
+        ) AS Faturamento
+
+    FROM Vendedores v
+
+    INNER JOIN Pedidos p
+        ON v.ID_Vendedor = p.ID_Vendedor
+
+    INNER JOIN ItensPedido ip
+        ON p.ID_Pedido = ip.ID_Pedido
+
+    WHERE p.Status_Pedido = 'Concluído'
+
+    GROUP BY v.Nome_Vendedor
+
+)
+
+SELECT
+    Vendedor,
+    Faturamento,
+
+    RANK() OVER (
+        ORDER BY Faturamento DESC
+    ) AS Ranking
+
+FROM VendasVendedor
+
+ORDER BY Ranking;
+
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/vendedor-faturamento.png"
+                                    alt="Resultado da consulta Ranking vendedor e faturamento">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica o ranking de vendedores e faturamento.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- =========================
+                     SLIDE 10
+                ========================= -->
+
+                        <div class="sql-slide">
+
+                            <span class="sql-analysis-number">
+                                ANÁLISE 10 / 10
+                            </span>
+
+                            <h4>Produtos Mais Vendidos</h4>
+
+                            <p class="sql-question">
+                                Quais produtos estao com baixa ou alta?
+                            </p>
+
+
+                            <div class="sql-code">
+
+                                <pre><code>
+SELECT
+    pr.Nome_Produto AS Produto,
+
+    SUM(ip.Quantidade) AS Quantidade_Vendida,
+
+    CASE
+
+        WHEN SUM(ip.Quantidade) >= 5
+            THEN 'Alto Volume'
+
+        WHEN SUM(ip.Quantidade) >= 3
+            THEN 'Volume Médio'
+
+        ELSE 'Baixo Volume'
+
+    END AS Classificacao
+
+FROM Produtos pr
+
+INNER JOIN ItensPedido ip
+    ON pr.ID_Produto = ip.ID_Produto
+
+INNER JOIN Pedidos p
+    ON ip.ID_Pedido = p.ID_Pedido
+
+WHERE p.Status_Pedido = 'Concluído'
+
+GROUP BY pr.Nome_Produto
+
+ORDER BY Quantidade_Vendida DESC;
+
+
+                        </code></pre>
+
+                            </div>
+
+
+                            <div class="sql-result">
+
+                                <span>RESULTADO</span>
+
+                                <img src="/fotos-projeto/clasificação.png"
+                                    alt="Resultado da consulta Classificação de produtos">
+
+                            </div>
+
+
+                            <div class="sql-insight">
+
+                                <strong>Insight</strong>
+
+                                <p>
+                                    A consulta identifica os produtos com baixa e alta.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+
+                    <!-- SETA DIREITA -->
+
+                    <button class="sql-arrow sql-next" type="button">
+                        &#10095;
+                    </button>
+
+                </div>
+
+
+                    <!-- SETA DIREITA -->
+
+                    <button class="sql-arrow sql-next" type="button">
+                        &#10095;
+                    </button>
+
+                </div>
+
+
+                <!-- INDICADORES -->
+
+                <div class="sql-dots">
+
+                    <button class="sql-dot active"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+                    <button class="sql-dot"></button>
+
+                </div>
+
+
+                <!-- LINK GITHUB -->
+
+                <div class="sql-project-footer">
+
+                    <span>
+                        SQL-Server • SQL • Database
+                    </span>
+
+                    <a href="https://github.com/O-Analista/Analise_Ecommerce_Sql" target="_blank" class="sql-github-button">
+                        Ver código no GitHub →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <!--LISTA NÃO ORDENADA-->
+        <section id="habilidades">
+            <h3>Habilidades</h3>
+            <ul>
+                <li>ETL</li>
+                <li>Modelagem-Banco de Dados</li>
+                <li>Linguagem Tsql</li>
+            </ul>
+        </section>
+
+
+        <br>
+
+
+        <!--SEMANTICA FOOTER PARA RODAPE DO SITE-->
+        <footer>
+
+
+            <section id="Contatos">
+                <!--EXEMPLO DE LINKS COM SEÇÃO MEUS CONTATOS-->
+                <p>Meu E-mail:<a href="milto:Azmavete4322@gmail.com">Azmavete4322@gmail.com</a></p>
+                <p>Contato:<a href="tel:+5524981211721">24981211721</a></p>
+            </section>
+
+        </footer>
+
+
+        <script src="/app.js"></script>
+
+</body>
+
+</html>
