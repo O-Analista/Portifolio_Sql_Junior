@@ -1,0 +1,1663 @@
+/* =========================================================
+   RESET GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    background-color: rgba(3, 30, 45, 0.95);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+.perfil {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 10px 20px;
+    gap: 40px;
+
+    color: white;
+    background-color: #061721;
+}
+
+.perfil h1 {
+    font-size: 20px;
+}
+
+.foto--perfil {
+    display: block;
+    width: 45px;
+    height: 45px;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.lista {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    padding: 5px 10px;
+
+    max-width: calc(100% - 20px);
+
+    background: rgba(15, 15, 25, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 50px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.lista ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.lista a {
+    position: relative;
+
+    display: block;
+
+    padding: 10px 18px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+}
+
+.lista a:hover {
+    color: #00e5ff;
+    background: rgba(0, 229, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.lista a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00e5ff;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+.lista a:hover::after {
+    width: 50%;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+#sobre-min {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #080b12;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+#sobre-min h1 {
+    margin: 0;
+
+    font-size: clamp(40px, 6vw, 75px);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #00e5ff
+    );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+#sobre-min h3 {
+    width: 100%;
+    max-width: 750px;
+
+    margin-top: 25px;
+
+    color: #aeb7c6;
+
+    font-size: clamp(18px, 2vw, 24px);
+
+    line-height: 1.6;
+
+    font-weight: 400;
+}
+
+#sobre-min::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: #00e5ff;
+
+    opacity: 0.08;
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROJETOS SQL
+========================================================= */
+
+.sql-section {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 100px 7%;
+
+    overflow: hidden;
+}
+
+.sql-header {
+    position: relative;
+
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.sql-tag {
+    display: inline-block;
+
+    padding: 7px 16px;
+
+    border: 1px solid rgba(0, 140, 255, 0.40);
+
+    border-radius: 30px;
+
+    background: rgba(0, 119, 255, 0.08);
+
+    color: #3da9ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.sql-header h2 {
+    margin: 18px 0 15px;
+
+    color: #ffffff;
+
+    font-size: 42px;
+}
+
+.sql-header p {
+    color: #aebbd0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARD DO PROJETO
+========================================================= */
+
+.sql-project {
+    position: relative;
+
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(0, 140, 255, 0.22);
+
+    background: rgba(7, 17, 32, 0.70);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.sql-project::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: #008cff;
+
+    box-shadow:
+        0 0 20px rgba(0, 140, 255, 0.8);
+}
+
+
+/* =========================================================
+   CABEÇALHO DO PROJETO
+========================================================= */
+
+.sql-project-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.sql-project-top > div:first-child {
+    min-width: 0;
+    flex: 1;
+}
+
+.sql-category {
+    color: #3da9ff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.sql-project-top h3 {
+    margin: 10px 0;
+
+    color: #ffffff;
+
+    font-size: 27px;
+}
+
+.sql-project-top p {
+    width: 100%;
+    max-width: 700px;
+
+    color: #aebbd0;
+
+    font-size: 16px;
+
+    text-align: start;
+
+    line-height: 1.6;
+
+    overflow-wrap: break-word;
+}
+
+.sql-project-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 119, 255, 0.08);
+
+    border: 1px solid rgba(0, 140, 255, 0.25);
+
+    color: #3da9ff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARROSSEL
+========================================================= */
+
+.sql-carousel {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.sql-slide-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.sql-slide {
+    display: none;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(0, 140, 255, 0.15);
+
+    background: rgba(2, 10, 22, 0.60);
+
+    overflow: hidden;
+}
+
+.sql-slide.active {
+    display: block;
+
+    animation: sqlFade 0.35s ease;
+}
+
+@keyframes sqlFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   TÍTULO DA ANÁLISE
+========================================================= */
+
+.sql-analysis-number {
+    color: #3da9ff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.sql-slide h4 {
+    margin: 8px 0;
+
+    color: #ffffff;
+
+    font-size: 23px;
+}
+
+.sql-question {
+    margin-bottom: 20px;
+
+    color: #aebbd0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BLOCO SQL
+========================================================= */
+
+.sql-code {
+    width: 100%;
+    max-width: 100%;
+
+    max-height: 260px;
+
+    overflow-x: auto;
+    overflow-y: auto;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(0, 140, 255, 0.18);
+
+    background: #050b14;
+}
+
+.sql-code pre {
+    margin: 0;
+
+    padding: 20px;
+
+    width: max-content;
+    min-width: 100%;
+
+    white-space: pre;
+}
+
+.sql-code code {
+    color: #b9d9ff;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.sql-result {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+}
+
+.sql-result > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #3da9ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.sql-result img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 350px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(0, 140, 255, 0.15);
+
+    background: #050b14;
+}
+
+
+/* =========================================================
+   INSIGHT
+========================================================= */
+
+.sql-insight {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 18px 20px;
+
+    border-left: 3px solid #008cff;
+
+    border-radius: 0 8px 8px 0;
+
+    background: rgba(0, 119, 255, 0.06);
+
+    overflow-wrap: break-word;
+}
+
+.sql-insight strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #3da9ff;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.sql-insight p {
+    margin: 0;
+
+    color: #b8c5d8;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SETAS
+========================================================= */
+
+.sql-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 140, 255, 0.35);
+
+    background: rgba(5, 20, 40, 0.90);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.sql-prev {
+    left: -20px;
+}
+
+.sql-next {
+    right: -20px;
+}
+
+.sql-arrow:hover {
+    background: rgba(0, 119, 255, 0.25);
+
+    border-color: #008cff;
+
+    box-shadow:
+        0 0 20px rgba(0, 140, 255, 0.25);
+
+    color: #3da9ff;
+}
+
+
+/* =========================================================
+   INDICADORES
+========================================================= */
+
+.sql-dots {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+}
+
+.sql-dot {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(150, 180, 220, 0.25);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.sql-dot.active {
+    width: 22px;
+
+    border-radius: 10px;
+
+    background: #008cff;
+
+    box-shadow:
+        0 0 10px rgba(0, 140, 255, 0.5);
+}
+
+
+/* =========================================================
+   RODAPÉ DO PROJETO
+========================================================= */
+
+.sql-project-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.sql-project-footer span {
+    color: #71829a;
+
+    font-size: 11px;
+}
+
+.sql-github-button {
+    padding: 9px 15px;
+
+    border-radius: 7px;
+
+    border: 1px solid rgba(0, 140, 255, 0.30);
+
+    background: rgba(0, 119, 255, 0.08);
+
+    color: #8bc7ff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: 0.3s ease;
+}
+
+.sql-github-button:hover {
+    background: rgba(0, 119, 255, 0.20);
+
+    border-color: #008cff;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HABILIDADES
+========================================================= */
+
+#habilidades {
+    width: calc(100% - 40px);
+
+    background-color: rgba(6, 23, 33, 0.95);
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 217, 255, 0.18);
+
+    max-width: 500px;
+
+    margin: 40px auto;
+
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.08);
+}
+
+#habilidades h3 {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+#habilidades ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+#habilidades li {
+    color: #b8c5ca;
+
+    background-color: rgba(255, 255, 255, 0.03);
+
+    padding: 14px 18px;
+
+    margin-bottom: 10px;
+
+    border-left: 3px solid #00d9ff;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    background-color: #061721;
+
+    color: #ffffff;
+
+    padding: 50px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 60px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer h3 {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #b8c5ca;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin: 8px 0;
+}
+
+footer a {
+    color: #00d9ff;
+
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+#Links-uteis,
+#Contatos {
+    flex: 1;
+}
+
+
+/* =========================================================
+   GAMMA
+========================================================= */
+
+.gamma-container {
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.gamma-container iframe {
+    display: block;
+
+    width: 100%;
+
+    height: 600px;
+
+    border: none;
+}
+
+
+/* =========================================================
+   TABLET
+   769px — 1024px
+========================================================= */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .sql-section {
+        padding: 80px 5%;
+    }
+
+    .sql-project {
+        padding: 28px;
+        
+    }
+
+.sql-slide {
+        padding: 25px;
+    }
+
+    .sql-result img {
+        max-height: 450px;
+    }
+
+    .gamma-container iframe {
+        height: 700px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP / NOTEBOOK
+   1025px — 1439px
+========================================================= */
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+
+    .sql-section {
+        padding: 100px 6%;
+    }
+
+    .sql-project {
+        max-width: 1150px;
+    }
+
+    .sql-slide {
+        padding: 30px;
+    }
+
+    .sql-result img {
+        max-height: 500px;
+    }
+
+    .gamma-container {
+        max-width: 1250px;
+    }
+
+    .gamma-container iframe {
+        height: 850px;
+    }
+}
+
+
+/* =========================================================
+   COMPUTADOR GRANDE
+   1440px+
+========================================================= */
+
+@media screen and (min-width: 1440px) {
+
+    .sql-section {
+        padding: 120px 7%;
+    }
+
+    .sql-project {
+        max-width: 1250px;
+    }
+
+    .sql-slide {
+        padding: 35px;
+    }
+
+    .sql-result img {
+        max-height: 650px;
+    }
+
+    .gamma-container {
+        max-width: 1400px;
+    }
+
+    .gamma-container iframe {
+        height: 900px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ATÉ 768px
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .perfil {
+        gap: 15px;
+
+        padding: 10px 15px;
+    }
+
+    .perfil h1 {
+        font-size: 16px;
+    }
+
+    .foto--perfil {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* MENU */
+
+    .lista {
+        width: calc(100% - 20px);
+
+        max-width: calc(100% - 20px);
+
+        padding: 8px 6px;
+
+        border-radius: 20px;
+    }
+
+    .lista ul {
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        gap: 2px;
+    }
+
+    .lista a {
+        padding: 7px 8px;
+
+        font-size: 11px;
+    }
+
+
+    /* SOBRE */
+
+    #sobre-min {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 80px 20px;
+    }
+
+    #sobre-min h1 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+    #sobre-min h3 {
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+
+    /* GAMMA */
+
+    .gamma-container {
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow: hidden;
+    }
+
+    .gamma-container iframe {
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 700px;
+    }
+
+
+    /* PROJETOS */
+
+    .sql-section {
+        width: 100%;
+
+        padding: 70px 12px;
+
+        overflow: hidden;
+    }
+
+    .sql-header {
+        width: 100%;
+
+        margin-bottom: 35px;
+    }
+
+    .sql-header h2 {
+        font-size: 30px;
+    }
+
+    .sql-header p {
+        font-size: 14px;
+    }
+
+
+    /* CARD */
+
+    .sql-project {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 18px;
+
+        border-radius: 15px;
+
+        overflow: hidden;
+    }
+
+
+    /* CABEÇALHO */
+
+    .sql-project-top {
+        display: block;
+
+        width: 100%;
+    }
+
+    .sql-category {
+        font-size: 15px;
+
+        letter-spacing: 1px;
+    }
+
+    .sql-project-top h3 {
+        font-size: 23px;
+    }
+
+    .sql-project-top p {
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 14px;
+
+        overflow-wrap: break-word;
+    }
+
+    .sql-project-number {
+        display: none;
+    }
+
+
+    /* CARROSSEL */
+
+    .sql-carousel {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .sql-slide-container {
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow: hidden;
+    }
+
+    .sql-slide {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 18px;
+
+        overflow: hidden;
+    }
+
+
+    /* CÓDIGO */
+
+    .sql-code {
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+    }
+
+    .sql-code pre {
+        width: max-content;
+
+        min-width: 100%;
+
+        padding: 15px;
+    }
+
+    .sql-code code {
+        font-size: 12px;
+    }
+
+
+    /* IMAGEM */
+
+    .sql-result {
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow: hidden;
+    }
+
+    .sql-result img {
+        display: block;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+
+        max-height: none;
+
+        object-fit: contain;
+    }
+
+
+    /* INSIGHT */
+
+    .sql-insight {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 15px;
+    }
+
+
+    /* SETAS */
+
+    .sql-arrow {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 15px;
+    }
+
+    .sql-prev {
+        left: 4px;
+    }
+
+    .sql-next {
+        right: 4px;
+    }
+
+
+    /* RODAPÉ PROJETO */
+
+    .sql-project-footer {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+
+    /* HABILIDADES */
+
+    #habilidades {
+        width: calc(100% - 30px);
+
+        padding: 25px 20px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        width: 100%;
+
+        flex-direction: column;
+
+        padding: 40px 20px;
+
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ATÉ 480px
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .perfil h1 {
+        font-size: 14px;
+    }
+
+    .lista {
+        width: calc(100% - 12px);
+
+        max-width: calc(100% - 12px);
+
+        top: 6px;
+    }
+
+    .lista a {
+        padding: 6px 6px;
+
+        font-size: 10px;
+    }
+
+    #sobre-min {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #sobre-min h1 {
+        font-size: 32px;
+    }
+
+    #sobre-min h3 {
+        font-size: 16px;
+    }
+
+    .sql-section {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .sql-project {
+        padding: 14px;
+    }
+
+    .sql-slide {
+        padding: 15px;
+    }
+
+    .sql-slide h4 {
+        font-size: 20px;
+    }
+
+    .sql-question {
+        font-size: 13px;
+    }
+
+    .sql-arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sql-prev {
+        left: 2px;
+    }
+
+    .sql-next {
+        right: 2px;
+    }
+
+    .gamma-container iframe {
+        height: 650px;
+    }
+}
+
+/* =========================================================
+   CORREÇÃO EXCLUSIVA PARA CELULAR
+   NÃO ALTERA DESKTOP
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* Seção */
+    .sql-section {
+        width: 100%;
+        padding: 60px 10px;
+        overflow: hidden;
+    }
+
+    /* Card */
+    .sql-project {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        overflow: hidden;
+    }
+
+    /* Cabeçalho */
+    .sql-project-top {
+        display: block;
+        width: 100%;
+    }
+
+    .sql-project-top > div:first-child {
+        width: 100%;
+    }
+
+    .sql-project-top p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Carrossel */
+    .sql-carousel {
+        width: 100%;
+        position: relative;
+    }
+
+    .sql-slide-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Slide */
+    .sql-slide {
+        width: 100%;
+        padding: 15px;
+        overflow: hidden;
+    }
+
+    /* =====================================================
+       TEXTO DO SLIDE
+       ===================================================== */
+
+    .sql-slide h4 {
+        font-size: 19px;
+        line-height: 1.3;
+    }
+
+    .sql-question {
+        font-size: 13px;
+        line-height: 1.6;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    /* =====================================================
+       CÓDIGO SQL
+       ===================================================== */
+
+    .sql-code {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sql-code pre {
+        width: max-content;
+        min-width: 100%;
+        margin: 0;
+        white-space: pre;
+    }
+
+    /* =====================================================
+       IMAGEM
+       ===================================================== */
+
+    .sql-result {
+        width: 100%;
+        max-width: 60%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sql-result img {
+        /*
+         * NÃO força a imagem a caber no celular.
+         * Mantém a proporção original.
+         */
+        width: auto;
+        height: auto;
+
+        /*
+         * A imagem terá no mínimo a largura do slide.
+         */
+        min-width: 100%;
+
+        max-width: none;
+        max-height: none;
+
+        display: block;
+        object-fit: contain;
+    }
+
+    /* =====================================================
+       SETAS
+       ===================================================== */
+
+    .sql-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .sql-prev {
+        left: -5px;
+    }
+
+    .sql-next {
+        right: -5px;
+    }
+
+    /* =====================================================
+       RODAPÉ
+       ===================================================== */
+
+    .sql-project-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .sql-section {
+        padding: 50px 8px;
+    }
+
+    .sql-project {
+        padding: 10px;
+    }
+
+    .sql-slide {
+        padding: 12px;
+    }
+
+    .sql-slide h4 {
+        font-size: 18px;
+    }
+
+    .sql-question {
+        font-size: 13px;
+    }
+
+    .sql-result img {
+        width: auto;
+        min-width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+    }
+
+    .sql-code {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   DIMINUIR IMAGEM DO CARROSSEL NO CELULAR
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    .sql-result {
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .sql-result img {
+        width: 85%;
+        max-width: 85%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+}
+
+
+/* CELULAR PEQUENO */
+/* ==========================================
+   TAMANHO DA IMAGEM DENTRO DO CARROSSEL
+========================================== */
+
+.sql-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sql-result img {
+    width: 70%;
+    height: auto;
+    max-width: 70%;
+    max-height: none;
+    object-fit: contain;
+}
